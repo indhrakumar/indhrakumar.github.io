@@ -9,7 +9,12 @@
 <body>
     <header class="header">
         <a href="#home" class="logo">R M <span> Indhra Kumar</span></a>
-        <i class='bx bx-menu'id="menu-icon"></i>
+        <div id="menu-icon" class="menu-icon">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#Education">Education</a>
@@ -48,9 +53,9 @@ environment.</p>
             <div class="timeline-dot"></div>
                 <div class="timeline-date">2018</div>
                 <div class="timeline-content">
-                    <h3>SSLC</h3>
-                    <p> I completed SSLC with 70%.</p>
-                      <p>  St.Paul's Hr Sec School Salem </p>
+                    <h3><b>SSLC</b></h3>
+                    <p> I completed<span class="study"> SSLC</span> with <span class="mark">70%.</span></p>
+                      <p class="name">  St.Paul's Hr Sec School<span class="place"> salem</span></p>
                 </div>
             </div>
     </div>
@@ -59,9 +64,9 @@ environment.</p>
             <div class="timeline-dot"></div>
                 <div class="timeline-date">2021</div>
                 <div class="timeline-content">
-                    <h3>Diploma</h3>
-                    <p>Completed my Diploma in<span> Electronics and Communication Engineering </span>with 81%</p>
-                    <p>CSI polytechnic college Salem </p>
+                    <h3><b>Diploma</b></h3>
+                    <p>Completed my<span class="study"> Diploma</span> in<span class="dpt"> Electronics and Communication Engineering </span>with<span class="mark"> 81%</span></p>
+                    <p class="name">CSI polytechnic college <span class="place">Salem</span></p>
                 </div>
             </div>
         
@@ -71,9 +76,9 @@ environment.</p>
             <div class="timeline-dot"></div>
                 <div class="timeline-date">2024</div>
                 <div class="timeline-content">
-                    <h3>Graduation</h3>
-                    <p>Completed <span style="color:rgb(212, 253, 8);font-style: italic;"> B.Tech </span>in <span style="font-style: italic;"> Information Technology </span></p>
-                    <p>University college of engineering (BIT Campus) Trichy </p>
+                    <h3><b>Graduation</b></h3>
+                    <p>Completed <span class="study"> B.Tech </span>in <span style="font-style: italic;"><span class="dpt"> Information Technology </span></p>
+                    <p class="name">University college of engineering (BIT Campus) <span class="place">Trichy</span> </p>
                 </div>
             </div>
         
@@ -81,20 +86,20 @@ environment.</p>
     </div>
     
     </section>
-    <section class="contact" id="contact">
-        <h2 class="heading">Contact<span> Me</span></h2> 
-        <form action="">
-            <div class="input-group">
-                <div class="input-box">
-                    <input type="text"
-                    placeholder="Full Name">
-                    <input type="email"
-                    placeholder="Email">
-                </div>
-            </div>
-        </form>
+   <section class="contact" id="contact">
+  <h2 class="heading">Contact <span>Me</span></h2>
 
-    </section>
+  <form>
+    <div class="input-group">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email" required>
+    </div>
+
+    <textarea placeholder="Your Message" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
 
 
     <script src="profile.js"></script>
