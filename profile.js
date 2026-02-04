@@ -1,3 +1,4 @@
+console.log("PROFILE JS LOADED");
 const menuIcon = document.querySelector("#menu-icon");
 const navbar = document.querySelector(".navbar");
 const navlink = document.querySelectorAll(".navbar a");
@@ -41,5 +42,6 @@ function changeMainColor() {
 
 window.addEventListener("scroll", changeMainColor);
 window.addEventListener("load", changeMainColor);
+
 
 
