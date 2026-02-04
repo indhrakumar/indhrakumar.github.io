@@ -10,10 +10,14 @@
 }
 
 :root{
-  --bg-color:#080808;
-  --second-bg-color:#131313;
-  --text-color:#ffffff;
-  --main-color:#00ffee;
+  --bg-color:#080808;    /*overall*/
+  --second-bg-color:#131313; /*education bg*/
+  --third-bg-color:#131313bd; /*skill bg*/
+  --text-color:#ffffff;      /*overall*/
+  --main-color:#00ffee;      /*overall*/
+  --skill-color:#ff0000; /*skill*/
+  --c-color:#00ff77;    /*career*/
+  --c-bg-color:#1c1c1c;  /*career bg*/
 }
 
 html{
@@ -44,7 +48,8 @@ body{
 .logo{
   font-size:3rem;
   font-weight:800;
-  color:var(--text-color);
+  color:var(--main-color);
+  text-shadow:0 0 25px var(--main-color);
 }
 .logo span{
   color:var(--main-color);
@@ -102,13 +107,17 @@ section{
   min-height:100vh;
   padding:10rem 12% 10rem;
 }
-
-
-.home{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:15rem;
+.home{ 
+    padding: 100px 15px; 
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15rem;
+} 
+.home h1 .name{ 
+    color:#00ffee;
+    text-shadow: 0 0 20px #00ffee;
+    margin-bottom: 5rem; 
 }
 
 .home-content{
@@ -205,9 +214,9 @@ section{
   position:relative;
 }
 .text-animation span::before{
-  content:" Software Developer";
+  content:"";
   color:var(--main-color);
-  animation:words 20s infinite;
+  animation:words 10s infinite;
 }
 .text-animation span::after{
   content:"";
@@ -217,28 +226,46 @@ section{
   height:100%;
   background:var(--bg-color);
   border-left:2px solid var(--main-color);
-  animation:typing 20s steps(14) infinite, cursor 0.6s infinite;
+  animation:typing 10s steps(20) infinite, cursor 0.6s infinite;
 }
 
 
 @keyframes cursor{
-  to{border-left:2px solid var(--main-color);}
+  to{
+    border-left: 2px solid var(--main-color);
+  }
 }
+
 @keyframes words{
-  0%,20%{content:" Web Designer";}
-  21%,40%{content:" Java Developer";}
-  41%,60%{content:" Software Engineer";}
-  61%,80%{content:" Full Stack Developer";}
-  81%,100%{content:" Software Developer";}
+  0%,20%{
+    content: " Web Designer";
+  }
+  30%,50%{
+    content: " Java Developer";
+  }
+  60%,100%{
+    content: " Full Stack Developer";
+  }
 }
+
 @keyframes typing{
-  0%{width:100%;}
-  10%,20%{width:0;}
-  30%,40%{width:100%;}
-  50%,60%{width:0;}
-  70%,80%{width:100%;}
-  90%,100%{width:0;}
+  /* Web Designer */
+  0%{ width: 100%; }
+  20%{ width: 0; }
+
+  /* Java Developer */
+  30%{ width: 100%; }
+  50%{ width: 0; }
+
+  /* Full Stack Developer */
+  60%{ width: 100%; }
+  80%{ width: 0; }
+
+  /* reset */
+  100%{ width: 100%; }
 }
+
+
 
 
 .home-img img{
@@ -253,16 +280,13 @@ section{
              0 0 100px var(--main-color);
 }
 
-
-.Education{
-  padding:100px 15px;
-  background:var(--second-bg-color);
-}
 .heading{
   font-size:8rem;
   text-align:center;
   margin:5rem 0;
 }
+
+/*Education*/
 .Education{ 
     padding: 100px 15px; 
     background: var(--second-bg-color); 
@@ -305,68 +329,258 @@ section{
        display: flex; 
        flex-wrap: wrap;
         position: relative; 
-    }
-     .timeline-items::before{ 
-        content: ""; 
-        position: absolute; 
-        width: 5px; 
-        height: 100%; 
-        background-color: var(--main-color); 
-        left: calc(50% - 1px); } 
-        .timeline-item{ 
-            margin-bottom: 40px ; 
-            width: 100%; 
-            position: relative; 
-        } 
-        .timeline-item:last-child{ 
-            margin-bottom: 0; 
-        } 
-        .timeline-item:nth-child(odd){ 
-            padding-right: calc(50% + 30px); 
-            text-align: right; 
-        } 
-        .timeline-item:nth-child(even){ 
-            padding-left: calc(50% + 30px); 
-        } 
-        .timeline-dot{ height: 21px; 
-            width: 21px; 
-            background-color: var(--main-color); 
-            box-shadow: 0 0 25px var(--main-color),
-                         0 0 50px var(--main-color); 
-            position: absolute; left:calc(50% - 8px); 
-            border-radius: 50%; top: 10px; 
-        } 
-        .timeline-date{ 
-            font-size: 20px; 
-            font-weight: 800; 
-            color: white; 
-            margin: 6px 0 15px; 
-        } 
-        .timeline-content{ 
-            background-color: var(--bg-color); 
-            border: 3px solid var(--main-color); 
-            padding: 30px 50px; 
-            border-radius: 4rem; 
-            box-shadow: 0 0 10px var(--main-color); 
-            cursor: pointer; 
-            transition: 0.3s ease-in-out; 
-        } 
-        .timeline-content:hover{ 
-            transform: scale(1.05); 
-            box-shadow: 0 0 25px var(--main-color); 
-        } 
-        .timeline-content h3{ 
-            font-size: 20px; 
-            color: white; 
-            margin: 0 0 10px; 
-            font-weight: 500; 
-        } 
-        .timeline-content p{ 
-            color: white; 
-            font-size: 16px; 
-            font-weight: 300; 
-            line-height: 22px; 
-        }
+}
+.timeline-items::before{ 
+  content: ""; 
+  position: absolute; 
+  width: 5px; 
+  height: 100%; 
+  background-color: var(--main-color); 
+  left: calc(50% - 1px); 
+} 
+.timeline-item{ 
+    margin-bottom: 40px ; 
+    width: 100%; 
+    position: relative; 
+} 
+.timeline-item:last-child{ 
+    margin-bottom: 0; 
+} 
+.timeline-item:nth-child(odd){ 
+    padding-right: calc(50% + 30px); 
+    text-align: right; 
+
+} 
+.timeline-item:nth-child(even){ 
+    padding-left: calc(50% + 30px); 
+    text-align: left; 
+} 
+
+.timeline-dot{ 
+    height: 21px; 
+    width: 21px; 
+    background-color: var(--main-color); 
+    box-shadow: 0 0 25px var(--main-color),
+                  0 0 50px var(--main-color); 
+    position: absolute; left:calc(50% - 8px); 
+    border-radius: 50%; top: 10px; 
+} 
+.timeline-date{ 
+    font-size: 20px; 
+    font-weight: 800; 
+    color: white; 
+    margin: 6px 0 15px; 
+} 
+.timeline-content{ 
+    background-color: var(--bg-color); 
+    border: 3px solid var(--main-color); 
+    padding: 30px 50px; 
+    border-radius: 4rem; 
+    box-shadow: 0 0 10px var(--main-color); 
+    cursor: pointer; 
+    transition: 0.3s ease-in-out; 
+} 
+.timeline-content:hover{ 
+    transform: scale(1.05); 
+    box-shadow: 0 0 25px var(--main-color); 
+} 
+.timeline-content h3{ 
+    font-size: 20px; 
+    color: white; 
+    margin: 0 0 10px; 
+    font-weight: 500; 
+} 
+.timeline-content p{ 
+    color: white; 
+    font-size: 16px; 
+    font-weight: 300; 
+    line-height: 22px; 
+}
+/*Skills*/
+.skills{ 
+    padding: 100px 15px; 
+    background: var(--third-bg-color); 
+} 
+.skills h2{ 
+    color: var(--main-color);
+    text-shadow: 0 0 40px var(--main-color);
+    margin-bottom: 5rem; 
+}
+
+.skill-timeline-items{
+    max-width: 1200px;
+    margin: auto;
+    display: flex; 
+    flex-wrap: wrap;
+    position: relative; 
+}
+.skill-timeline-items::before{ 
+  content: ""; 
+  position: absolute; 
+  width: 5px; 
+  height: 100%; 
+  background-color: var(--main-color); 
+  left: calc(50% - 1px); 
+} 
+.skill-timeline-item{ 
+    margin-bottom: 40px ; 
+    width: 100%; 
+    position: relative; 
+} 
+.skill-timeline-item:last-child{ 
+    margin-bottom: 0; 
+} 
+.skill-timeline-item:nth-child(odd){ 
+  
+    padding-right:calc(50% + 30px); 
+    text-align: right; 
+   
+
+} 
+.skill-timeline-item:nth-child(even){ 
+ 
+    padding-left: calc(50% + 30px); 
+    text-align: left; 
+    
+} 
+.skill-timeline-dot{ 
+    height: 21px; 
+    width: 21px; 
+    background-color: var(--main-color); 
+    box-shadow: 0 0 25px var(--main-color),
+                  0 0 50px var(--main-color); 
+    position: absolute; left:calc(50% - 8px); 
+    border-radius: 50%; top: 10px; 
+} 
+.skill-timeline-date{ 
+    font-size: 20px; 
+    font-weight: 800; 
+    color: white; 
+    margin: 6px 0 15px; 
+} 
+.skill-timeline-content{ 
+  text-align: center;
+    background-color: var(--bg-color); 
+    border: 3px solid var(--main-color); 
+    padding: 30px 50px; 
+    border-radius: 4rem; 
+    box-shadow: 0 0 10px var(--main-color); 
+    cursor: pointer; 
+    transition: 0.3s ease-in-out; 
+} 
+.skill-timeline-content:hover{ 
+    transform: scale(1.05); 
+    box-shadow: 0 0 25px var(--main-color); 
+} 
+.skill-timeline-content h3{ 
+    font-size: 20px; 
+    color: white; 
+    margin: 0 0 10px; 
+    font-weight: 500; 
+} 
+/*career*/
+.career{ 
+    padding: 100px 15px; 
+    background: var(--c-bg-color); 
+} 
+.career h2{ 
+    color: var(--main-color);
+    text-shadow: 0 0 40px var(--main-color);
+    margin-bottom: 5rem; 
+}
+.heading2{ 
+ text-align:center;
+  margin:5rem 0;
+ 
+}
+.heading2, .company,.loc, .period, .role{ 
+  font-size:4rem;
+  font-family:'Courier New', Courier, monospace;
+}
+.role{
+  color: #08ef27;
+
+}
+.company{
+ color: #00ffee;
+}
+.loc{
+ color: #00ff77;
+}
+.period{
+  color: gold;
+
+}
+
+.job-items{
+    max-width: 1200px;
+    margin: auto;
+    display: flex; 
+    flex-wrap: wrap;
+    position: relative; 
+}
+.job-items::before{ 
+  content: ""; 
+  position: absolute; 
+  width: 5px; 
+  height: 100%; 
+  background-color: var(--main-color); 
+  left: calc(50% - 1px); 
+} 
+.job-item{ 
+    margin-bottom: 40px ; 
+    width: 100%; 
+    position: relative; 
+} 
+.job-item:last-child{ 
+    margin-bottom: 0; 
+} 
+.job-item:nth-child(odd){ 
+  
+    padding-right:calc(50% + 30px); 
+    text-align: center; 
+   
+
+} 
+.job-item:nth-child(even){ 
+ 
+    padding-left: calc(50% + 30px); 
+    text-align: left; 
+    
+} 
+.job-dot{ 
+    height: 21px; 
+    width: 21px; 
+    background-color: var(--main-color); 
+    box-shadow: 0 0 25px var(--main-color),
+                  0 0 50px var(--main-color); 
+    position: absolute; 
+    left:calc(50% - 8px); 
+    border-radius: 50%; 
+    top: 5px; 
+} 
+.job-content{ 
+    background-color: var(--bg-color); 
+    border: 3px solid var(--main-color); 
+    padding: 30px 50px; 
+    border-radius: 4rem; 
+    box-shadow: 0 0 10px var(--main-color); 
+    cursor: pointer; 
+    transition: 0.3s ease-in-out; 
+} 
+.job-content:hover{ 
+    transform: scale(1.05); 
+    box-shadow: 0 0 25px var(--main-color); 
+} 
+.job-content h3{ 
+    font-size: 20px; 
+    color: white; 
+    margin: 0 0 10px; 
+    font-weight: 500; 
+} 
+
+
+
 
 
 ::-webkit-scrollbar{width:15px;}
@@ -521,4 +735,5 @@ section{
     flex-direction: column;
   }
 }
+
 
