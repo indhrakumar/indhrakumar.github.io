@@ -43,5 +43,18 @@ function changeMainColor() {
 window.addEventListener("scroll", changeMainColor);
 window.addEventListener("load", changeMainColor);
 
+//text animation added
+let typed = new Typed(".text-animation", {
+  strings: [
+    "Frontend Developer",
+    "FullStack Developer",
+    "Java Developer",
+    "Web Designer",
+  ],
+  typeSpeed: 80,
+  backSpeed: 50,
+  backDelay: 1500,
+  loop: true,
+});
 
 
